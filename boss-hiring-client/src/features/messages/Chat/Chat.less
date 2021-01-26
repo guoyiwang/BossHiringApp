@@ -1,0 +1,48 @@
+.chat-page {
+  .sticky-header {
+    /*使标题始终在顶部*/
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .chat-list {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .chat-content {
+      flex: 1 1;
+      color: #333;
+      font-size: 20px;
+      line-height: 2;
+      text-align: left;
+      width: auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+    .chat-avatar {
+      width: 35px;
+      height: 35px;
+      vertical-align: middle;
+      margin-right: 15px;
+      margin-left: 12px;
+    }
+  }
+  .send-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: inherit;
+  }
+}
+
+#chat-me .chat-content {
+  padding-right: 8px;
+  text-align: right;
+}
+#chat-me .chat-avatar {
+  margin-left: 15px;
+  margin-right: 12px;
+}

@@ -1,21 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {Provider} from 'react-redux'
-import {HashRouter, Switch, Route} from 'react-router-dom'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from "./app/store";
+import App from "./App";
+import httpService from "./web/interceptors";
+import "./index.less";
 
-import store from './redux/store'
-import Login from './containers/login/login'
-import Register from './containers/register/register'
-import Main from './containers/main/main'
+httpService.setupInterceptors(store); // use http interceptor
 
-ReactDOM.render((
+ReactDOM.render(
+  <React.StrictMode>
     <Provider store={store}>
-        <HashRouter>
-            <Switch>
-                <Route path='/login' component={Login}/>
-                <Route path='/register' component={Register}/>
-                <Route component={Main}/>
-            </Switch>
-        </HashRouter>
+      <App />
     </Provider>
-), document.getElementById('root'))
+  </React.StrictMode>,
+  document.getElementById("root")
+);
